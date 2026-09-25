@@ -3,16 +3,13 @@
 **Status**: ✗ Failed
 
 ### Expected:
-Upload file to S3 root-level key (no folder prefix).
+Upload file to S3 with root-level key (no subfolder).
 
 ### STDOUT:
 [empty]
 
 ### STDERR:
-Local file not found: /home/agent/ue-test-data/test-upload.txt
+ERROR: Local file not found: /home/agent/ue-test-data/test-upload.txt
 
 ### Extension Output:
-{"exit_code": 1, "status_description": "Local file not found: /home/agent/ue-test-data/test-upload.txt"}
-
-### Notes:
-- Local test file /home/agent/ue-test-data/test-upload.txt does not exist on agent host.
+{"exit_code": 1, "status_description": "Local file not found: /home/agent/ue-test-data/test-upload.txt", "errors": [{"type": "LocalFileNotFoundError"}]}

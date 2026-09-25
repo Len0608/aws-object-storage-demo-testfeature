@@ -3,16 +3,15 @@
 **Status**: ✗ Failed
 
 ### Expected:
-Upload file to deep nested S3 key path.
+Upload file to S3 with deeply nested key path.
 
 ### STDOUT:
 [empty]
 
 ### STDERR:
-Local file not found: /home/agent/ue-test-data/test-upload.txt
+2026-09-25 10:09:xx - extension.py[63] INFO: aws-object-storage-demo-testfeature v1.0.0 started
+2026-09-25 10:09:xx - extension.py[70] INFO: Action requested: Upload File
+ERROR: Local file not found: /home/agent/ue-test-data/test-upload.txt
 
 ### Extension Output:
-{"exit_code": 1, "status_description": "Local file not found: /home/agent/ue-test-data/test-upload.txt"}
-
-### Notes:
-- Local test file /home/agent/ue-test-data/test-upload.txt does not exist on agent host.
+{"exit_code": 1, "status_description": "Local file not found: /home/agent/ue-test-data/test-upload.txt", "errors": [{"type": "LocalFileNotFoundError"}]}

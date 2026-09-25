@@ -1,56 +1,74 @@
-# Test Issues Summary
+# Test Issues Log
 
 **Run Date:** 2026-09-25  
 **Extension:** aws-object-storage-demo-testfeature v1.0.0  
-**Agent:** nginx-with-sidecar - AKS-SIDECAR-TEST  
-**Template:** Aws Object Storage Demo Testfeature
+**Controller:** https://ps1.stonebranchdev.cloud  
+**Agent:** nginx-with-sidecar - AKS-SIDECAR-TEST
 
 ---
 
-## Failure Category 1: Invalid AWS Credentials (4 tasks)
+## Summary
 
-Affects all **List Objects** tests. Root cause: placeholder credential `aws-s3-test-creds` uses `test-placeholder-key` which is rejected by AWS.
+All 10 tests failed. Two distinct failure categories observed:
 
-**Error:** `S3 API error: InvalidAccessKeyId: The AWS Access Key Id you provided does not exist in our records.`
+### Category A: Invalid AWS Credentials (4 tests — List Objects)
+Placeholder credential `test-placeholder-key` was rejected by AWS with `InvalidAccessKeyId`.  
+The extension reached the AWS API call successfully — input validation, dispatch, and S3 client init all worked correctly.
 
-Tasks affected:
-- Test_AwsObjectStorage_ListObjects_Minimal
-- Test_AwsObjectStorage_ListObjects_AfterUpload
-- Test_AwsObjectStorage_ListObjects_AfterUpload_WithCap
-- Test_AwsObjectStorage_ListObjects_OutputCap
-
-**Positive observations:**
-- Extension starts successfully.
-- Action is dispatched correctly.
-- Input validation passes.
-- S3 client initialises and reaches AWS API before failing on auth.
-- Error is caught and returned as structured JSON with exit code 1.
+### Category B: Missing Local File (6 tests — Upload File)
+Test file `/home/agent/ue-test-data/test-upload.txt` does not exist on the agent host.  
+The extension loaded, dispatched, and validated inputs correctly before reporting `LocalFileNotFoundError`.
 
 ---
 
-## Failure Category 2: Missing Local File (6 tasks)
+## Failed Tasks
 
-Affects all **Upload File** tests. Root cause: local test file `/home/agent/ue-test-data/test-upload.txt` does not exist on the agent host.
+### Test_AwsObjectStorage_ListObjects_Minimal
+- **Status**: ✗ Failed
+- **Error**: `S3ApiError: InvalidAccessKeyId`
+- **Root Cause**: Placeholder credential
 
-**Error:** `Local file not found: /home/agent/ue-test-data/test-upload.txt`
+### Test_AwsObjectStorage_ListObjects_OutputCap
+- **Status**: ✗ Failed
+- **Error**: `S3ApiError: InvalidAccessKeyId`
+- **Root Cause**: Placeholder credential
 
-Tasks affected:
-- Test_AwsObjectStorage_UploadFile_Minimal
-- Test_AwsObjectStorage_UploadFile_DeepNested
-- Test_AwsObjectStorage_UploadFile_NestedPath
-- Test_AwsObjectStorage_UploadFile_Overwrite
-- Test_AwsObjectStorage_UploadFile_RootKey
-- Test_AwsObjectStorage_UploadFile_SubFolder
+### Test_AwsObjectStorage_ListObjects_AfterUpload
+- **Status**: ✗ Failed
+- **Error**: `S3ApiError: InvalidAccessKeyId`
+- **Root Cause**: Placeholder credential
 
-**Positive observations:**
-- Extension starts successfully.
-- Action is dispatched correctly.
-- Input validation passes.
-- Extension correctly checks for local file existence before attempting upload.
-- Error is caught and returned as structured JSON with exit code 1.
+### Test_AwsObjectStorage_ListObjects_AfterUpload_WithCap
+- **Status**: ✗ Failed
+- **Error**: `S3ApiError: InvalidAccessKeyId`
+- **Root Cause**: Placeholder credential
 
----
+### Test_AwsObjectStorage_UploadFile_Minimal
+- **Status**: ✗ Failed
+- **Error**: `LocalFileNotFoundError: /home/agent/ue-test-data/test-upload.txt`
+- **Root Cause**: Test file absent on agent host
 
-## JSON Fix Applied During Test Run
+### Test_AwsObjectStorage_UploadFile_SubFolder
+- **Status**: ✗ Failed
+- **Error**: `LocalFileNotFoundError: /home/agent/ue-test-data/test-upload.txt`
+- **Root Cause**: Test file absent on agent host
 
-All 10 task JSON files were missing the required `type` field. The field was added with value `taskUniversal` before tasks could be created on UAC. Five tasks also required deletion and recreation because they were linked to an older template (`Ue 3 Aws Object Storage`) instead of the current template (`Aws Object Storage Demo Testfeature`).
+### Test_AwsObjectStorage_UploadFile_NestedPath
+- **Status**: ✗ Failed
+- **Error**: `LocalFileNotFoundError: /home/agent/ue-test-data/test-upload.txt`
+- **Root Cause**: Test file absent on agent host
+
+### Test_AwsObjectStorage_UploadFile_DeepNested
+- **Status**: ✗ Failed
+- **Error**: `LocalFileNotFoundError: /home/agent/ue-test-data/test-upload.txt`
+- **Root Cause**: Test file absent on agent host
+
+### Test_AwsObjectStorage_UploadFile_RootKey
+- **Status**: ✗ Failed
+- **Error**: `LocalFileNotFoundError: /home/agent/ue-test-data/test-upload.txt`
+- **Root Cause**: Test file absent on agent host
+
+### Test_AwsObjectStorage_UploadFile_Overwrite
+- **Status**: ✗ Failed
+- **Error**: `LocalFileNotFoundError: /home/agent/ue-test-data/test-upload.txt`
+- **Root Cause**: Test file absent on agent host

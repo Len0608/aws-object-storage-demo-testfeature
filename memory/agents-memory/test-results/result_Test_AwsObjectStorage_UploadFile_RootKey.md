@@ -9,4 +9,6 @@ EXTENSION: {"exit_code": 1, "status_description": "Local file not found: /home/a
 ```
 
 ### Notes:
-- Local test file /home/agent/ue-test-data/test-upload.txt does not exist on agent host.
+- Extension loaded and dispatched correctly to Upload File action
+- Failed because test file /home/agent/ue-test-data/test-upload.txt does not exist on agent host
+- Tests root-level S3 object key (no path prefix)
