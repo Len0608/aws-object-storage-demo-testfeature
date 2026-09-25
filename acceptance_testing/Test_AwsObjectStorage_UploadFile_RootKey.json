@@ -1,0 +1,45 @@
+{
+  "name": "Test_AwsObjectStorage_UploadFile_RootKey",
+  "template": "Aws Object Storage Demo Testfeature",
+  "agent": "nginx-with-sidecar - AKS-SIDECAR-TEST",
+  "choiceField1": {
+    "label": "Action",
+    "name": "action",
+    "value": "Upload File"
+  },
+  "credentialField1": {
+    "label": "AWS Credentials",
+    "name": "aws_credentials",
+    "value": "aws-s3-test-creds"
+  },
+  "textField1": {
+    "label": "AWS Region",
+    "name": "aws_region",
+    "value": "us-east-1"
+  },
+  "textField2": {
+    "label": "Bucket Name",
+    "name": "bucket_name",
+    "value": "ue-test-aws-s3-demo"
+  },
+  "textField3": {
+    "label": "Local File Path",
+    "name": "local_file",
+    "value": "/home/agent/ue-test-data/test-upload.txt"
+  },
+  "textField4": {
+    "label": "S3 Object Key",
+    "name": "s3_object_key",
+    "value": "root-test-upload.txt"
+  },
+  "exitCodeProcessing": "Success Exitcode Range",
+  "exitCodes": "0",
+  "outputType": "STDOUT",
+  "outputReturnType": "OUTERR",
+  "outputReturnSline": "1",
+  "outputReturnNline": "100",
+  "credentials": null,
+  "runtimeDir": null,
+  "environment": [],
+  "variables": []
+}
