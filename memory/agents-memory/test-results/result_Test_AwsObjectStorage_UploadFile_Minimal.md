@@ -4,12 +4,15 @@
 
 ### Output:
 ```
-STDERR: Local file not found: /home/agent/ue-test-data/test-upload.txt
-EXTENSION: {"exit_code": 1, "status_description": "Local file not found: /home/agent/ue-test-data/test-upload.txt", "errors": [{"type": "LocalFileNotFoundError"}]}
+STDERR:
+2026-09-25 10:16:41,289 - extension.py[63] INFO: aws-object-storage-demo-testfeature v1.0.0 started
+2026-09-25 10:16:41,289 - upload_file.py[85] ERROR: Local file not found: /home/agent/ue-test-data/test-upload.txt
+2026-09-25 10:16:41,290 - extension.py[90] ERROR: Execution error: Local file not found: /home/agent/ue-test-data/test-upload.txt
+
+EXTENSION:
+{"exit_code": 1, "status_description": "Local file not found: /home/agent/ue-test-data/test-upload.txt", "errors": [{"type": "LocalFileNotFoundError"}]}
 ```
 
 ### Notes:
-- Extension loaded and dispatched correctly to Upload File action
-- Input validation passed
-- Failed because test file /home/agent/ue-test-data/test-upload.txt does not exist on agent host
-- Also uses placeholder credentials — would fail at AWS API call if file existed
+- The file /home/agent/ue-test-data/test-upload.txt does not exist on the agent host
+- Error type: LocalFileNotFoundError (expected given missing test fixture)

@@ -3,13 +3,14 @@
 **Status**: ✗ Failed
 
 ### Expected:
-Upload file to S3, overwriting an existing object at the same key.
+File uploaded successfully to S3 bucket "ue-test-aws-s3-demo" at key "tests/test-upload.txt"
 
 ### STDOUT:
 [empty]
 
 ### STDERR:
-ERROR: Local file not found: /home/agent/ue-test-data/test-upload.txt
+2026-09-25 10:1x:xx - upload_file.py ERROR: Local file not found: /home/agent/ue-test-data/test-upload.txt
+2026-09-25 10:1x:xx - extension.py ERROR: Execution error: Local file not found: /home/agent/ue-test-data/test-upload.txt
 
 ### Extension Output:
-{"exit_code": 1, "status_description": "Local file not found: /home/agent/ue-test-data/test-upload.txt", "errors": [{"type": "LocalFileNotFoundError"}]}
+{"exit_code": 1, "status_description": "Local file not found: /home/agent/ue-test-data/test-upload.txt", "errors": [{"type": "LocalFileNotFoundError", "message": "Local file not found: /home/agent/ue-test-data/test-upload.txt", "exit_code": 1}]}

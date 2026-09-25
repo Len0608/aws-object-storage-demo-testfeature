@@ -3,15 +3,14 @@
 **Status**: ✗ Failed
 
 ### Expected:
-Upload file to S3 with nested path in object key.
+File uploaded successfully to S3 bucket "ue-test-aws-s3-demo" at key "tests/2024/09/nested-upload.txt"
 
 ### STDOUT:
 [empty]
 
 ### STDERR:
-2026-09-25 10:09:44,840 - extension.py[63] INFO: aws-object-storage-demo-testfeature v1.0.0 started
-2026-09-25 10:09:44,840 - extension.py[70] INFO: Action requested: Upload File
-ERROR: Local file not found: /home/agent/ue-test-data/test-upload.txt
+2026-09-25 10:1x:xx - upload_file.py ERROR: Local file not found: /home/agent/ue-test-data/test-upload.txt
+2026-09-25 10:1x:xx - extension.py ERROR: Execution error: Local file not found: /home/agent/ue-test-data/test-upload.txt
 
 ### Extension Output:
-{"exit_code": 1, "status_description": "Local file not found: /home/agent/ue-test-data/test-upload.txt", "errors": [{"type": "LocalFileNotFoundError"}]}
+{"exit_code": 1, "status_description": "Local file not found: /home/agent/ue-test-data/test-upload.txt", "errors": [{"type": "LocalFileNotFoundError", "message": "Local file not found: /home/agent/ue-test-data/test-upload.txt", "exit_code": 1}]}

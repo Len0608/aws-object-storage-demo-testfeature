@@ -228,7 +228,7 @@ class S3Client:
 
         logger.error("S3 ClientError — code: %s, message: %s", code, message)
 
-        if code in ("InvalidClientTokenId", "SignatureDoesNotMatch"):
+        if code in ("InvalidClientTokenId", "SignatureDoesNotMatch", "InvalidAccessKeyId"):
             raise AuthenticationError("%s: %s" % (code, message)) from exc
         if code == "AccessDenied":
             raise AuthorizationError("%s: %s" % (code, message)) from exc
