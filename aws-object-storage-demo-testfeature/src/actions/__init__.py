@@ -1,13 +1,15 @@
-"""Actions module - Business logic implementations."""
+"""Actions module — business logic implementations."""
 
 from actions.output import ActionOutput
+from actions.list_objects import list_objects
+from actions.upload_file import upload_file
 from manager import ExtensionManager
+
 extension_manager = ExtensionManager()
 
-# Import your action functions here
-# from actions.action_name import action_function
-
-# Map action names to functions
+# Map action choice values (as they appear in the template) to action functions.
+# Keys must match the SingleChoice values used by input_data.action.value.
 ACTION_MAPPER = {
-    # "action_name": action_function,
+    "List Objects": list_objects,
+    "Upload File": upload_file,
 }
