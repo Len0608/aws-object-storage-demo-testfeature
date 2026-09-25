@@ -41,5 +41,6 @@
   "credentials": null,
   "runtimeDir": null,
   "environment": [],
-  "variables": []
+  "variables": [],
+  "type": "taskUniversal"
 }

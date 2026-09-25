@@ -1,0 +1,543 @@
+2026-09-25 09:57:57 - Hook script started
+2026-09-25 09:57:57 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PostToolUse","tool_name":"Bash","tool_input":{"command":"cd /tmp/aws-object-storage-demo-testfeature/acceptance_testing && \\\nfor f in *.json; do\n  python3 -c \"\nimport json, sys\nwith open('$f') as fh:\n    data = json.load(fh)\ndata['type'] = 'Universal'\nwith open('$f', 'w') as fh:\n    json.dump(data, fh, indent=2)\nprint('Patched: $f')\n\"\ndone","description":"Add type Universal to all test JSON files"},"tool_response":{"stdout":"Patched: Test_AwsObjectStorage_ListObjects_AfterUpload.json\nPatched: Test_AwsObjectStorage_ListObjects_AfterUpload_WithCap.json\nPatched: Test_AwsObjectStorage_ListObjects_Minimal.json\nPatched: Test_AwsObjectStorage_ListObjects_OutputCap.json\nPatched: Test_AwsObjectStorage_UploadFile_DeepNested.json\nPatched: Test_AwsObjectStorage_UploadFile_Minimal.json\nPatched: Test_AwsObjectStorage_UploadFile_NestedPath.json\nPatched: Test_AwsObjectStorage_UploadFile_Overwrite.json\nPatched: Test_AwsObjectStorage_UploadFile_RootKey.json\nPatched: Test_AwsObjectStorage_UploadFile_SubFolder.json","stderr":"","interrupted":false,"isImage":false,"noOutputExpected":false},"tool_use_id":"toolu_014SuYY6JB7AXNvcM3dtx6W9","duration_ms":271}
+
+2026-09-25 09:57:57 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "cd /tmp/aws-object-storage-demo-testfeature/acceptance_testing && \\\nfor f in *.json; do\n  python3 -c \"\nimport json, sys\nwith open('$f') as fh:\n    data = json.load(fh)\ndata['type'] = 'Universal'\nwith open('$f', 'w') as fh:\n    json.dump(data, fh, indent=2)\nprint('Patched: $f')\n\"\ndone",
+    "description": "Add type Universal to all test JSON files"
+  },
+  "tool_response": {
+    "stdout": "Patched: Test_AwsObjectStorage_ListObjects_AfterUpload.json\nPatched: Test_AwsObjectStorage_ListObjects_AfterUpload_WithCap.json\nPatched: Test_AwsObjectStorage_ListObjects_Minimal.json\nPatched: Test_AwsObjectStorage_ListObjects_OutputCap.json\nPatched: Test_AwsObjectStorage_UploadFile_DeepNested.json\nPatched: Test_AwsObjectStorage_UploadFile_Minimal.json\nPatched: Test_AwsObjectStorage_UploadFile_NestedPath.json\nPatched: Test_AwsObjectStorage_UploadFile_Overwrite.json\nPatched: Test_AwsObjectStorage_UploadFile_RootKey.json\nPatched: Test_AwsObjectStorage_UploadFile_SubFolder.json",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+  },
+  "tool_use_id": "toolu_014SuYY6JB7AXNvcM3dtx6W9",
+  "duration_ms": 271
+}
+2026-09-25 09:57:57 - Event type: PostToolUse
+2026-09-25 09:57:57 - Handling PostToolUse
+2026-09-25 09:57:57 - Hook completed successfully
+2026-09-25 09:58:02 - Hook script started
+2026-09-25 09:58:02 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PreToolUse","tool_name":"Bash","tool_input":{"command":"cd /tmp/iss-ue-ca-plugin/claude/uac/ue-ca/skills/managing-universal-controller && \\\nexport UIP_URL=https://ps1.stonebranchdev.cloud && \\\nexport UIP_USERID=len && \\\nexport UIP_PASSWORD=changeme && \\\npython3 task.py create --file /tmp/aws-object-storage-demo-testfeature/acceptance_testing/Test_AwsObjectStorage_ListObjects_Minimal.json 2>&1","description":"Create first test task after JSON fix"},"tool_use_id":"toolu_019ZZvjBYt9b1xoS1rHufJbP"}
+
+2026-09-25 09:58:02 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "cd /tmp/iss-ue-ca-plugin/claude/uac/ue-ca/skills/managing-universal-controller && \\\nexport UIP_URL=https://ps1.stonebranchdev.cloud && \\\nexport UIP_USERID=len && \\\nexport UIP_PASSWORD=changeme && \\\npython3 task.py create --file /tmp/aws-object-storage-demo-testfeature/acceptance_testing/Test_AwsObjectStorage_ListObjects_Minimal.json 2>&1",
+    "description": "Create first test task after JSON fix"
+  },
+  "tool_use_id": "toolu_019ZZvjBYt9b1xoS1rHufJbP"
+}
+2026-09-25 09:58:02 - Event type: PreToolUse
+2026-09-25 09:58:02 - Handling PreToolUse
+2026-09-25 09:58:02 - Hook completed successfully
+2026-09-25 09:58:06 - Hook script started
+2026-09-25 09:58:06 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PreToolUse","tool_name":"Bash","tool_input":{"command":"curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n  -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @/tmp/aws-object-storage-demo-testfeature/acceptance_testing/Test_AwsObjectStorage_ListObjects_Minimal.json 2>&1","description":"Retry POST with updated JSON including type field"},"tool_use_id":"toolu_01VM6fc8CYEVRhTVecaSvekg"}
+
+2026-09-25 09:58:06 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n  -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @/tmp/aws-object-storage-demo-testfeature/acceptance_testing/Test_AwsObjectStorage_ListObjects_Minimal.json 2>&1",
+    "description": "Retry POST with updated JSON including type field"
+  },
+  "tool_use_id": "toolu_01VM6fc8CYEVRhTVecaSvekg"
+}
+2026-09-25 09:58:06 - Event type: PreToolUse
+2026-09-25 09:58:06 - Handling PreToolUse
+2026-09-25 09:58:06 - Hook completed successfully
+2026-09-25 09:58:06 - Hook script started
+2026-09-25 09:58:06 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PostToolUse","tool_name":"Bash","tool_input":{"command":"curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n  -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @/tmp/aws-object-storage-demo-testfeature/acceptance_testing/Test_AwsObjectStorage_ListObjects_Minimal.json 2>&1","description":"Retry POST with updated JSON including type field"},"tool_response":{"stdout":"Could not resolve type id 'Universal' as a subtype of `com.stonebranch.opswise.server.rest.xmlobject.crud.TaskWsData`: known type ids = [taskAgent, taskApplicationControl, taskApproval, taskEmail, taskEmailMonitor, taskFileMonitor, taskFtp, taskFtpFileMonitor, taskIbmi, taskManual, taskMonitor, taskPeoplesoft, taskRecurring, taskSap, taskSleep, taskSql, taskStoredProc, taskSystemMonitor, taskUcmd, taskUniversal, taskUniversalMonitor, taskUnix, taskVariableMonitor, taskWebService, taskWindows, taskWorkflow, taskZos, taskZosMonitor]\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 1036]\nHTTP_STATUS:400","stderr":"","interrupted":false,"isImage":false,"noOutputExpected":false},"tool_use_id":"toolu_01VM6fc8CYEVRhTVecaSvekg","duration_ms":118}
+
+2026-09-25 09:58:06 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n  -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @/tmp/aws-object-storage-demo-testfeature/acceptance_testing/Test_AwsObjectStorage_ListObjects_Minimal.json 2>&1",
+    "description": "Retry POST with updated JSON including type field"
+  },
+  "tool_response": {
+    "stdout": "Could not resolve type id 'Universal' as a subtype of `com.stonebranch.opswise.server.rest.xmlobject.crud.TaskWsData`: known type ids = [taskAgent, taskApplicationControl, taskApproval, taskEmail, taskEmailMonitor, taskFileMonitor, taskFtp, taskFtpFileMonitor, taskIbmi, taskManual, taskMonitor, taskPeoplesoft, taskRecurring, taskSap, taskSleep, taskSql, taskStoredProc, taskSystemMonitor, taskUcmd, taskUniversal, taskUniversalMonitor, taskUnix, taskVariableMonitor, taskWebService, taskWindows, taskWorkflow, taskZos, taskZosMonitor]\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 1036]\nHTTP_STATUS:400",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+  },
+  "tool_use_id": "toolu_01VM6fc8CYEVRhTVecaSvekg",
+  "duration_ms": 118
+}
+2026-09-25 09:58:06 - Event type: PostToolUse
+2026-09-25 09:58:06 - Handling PostToolUse
+2026-09-25 09:58:06 - Hook completed successfully
+2026-09-25 09:58:10 - Hook script started
+2026-09-25 09:58:10 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PreToolUse","tool_name":"Bash","tool_input":{"command":"\\\nfor f in *.json; do\n  python3 -c \"\nimport json\nwith open('$f') as fh:\n    data = json.load(fh)\ndata['type'] = 'taskUniversal'\nwith open('$f', 'w') as fh:\n    json.dump(data, fh, indent=2)\nprint('Fixed: $f')\n\"\ndone","description":"Set type to taskUniversal in all JSON files"},"tool_use_id":"toolu_01Qe8eUYoFsuCNQs3MuutGvX"}
+
+2026-09-25 09:58:10 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "\\\nfor f in *.json; do\n  python3 -c \"\nimport json\nwith open('$f') as fh:\n    data = json.load(fh)\ndata['type'] = 'taskUniversal'\nwith open('$f', 'w') as fh:\n    json.dump(data, fh, indent=2)\nprint('Fixed: $f')\n\"\ndone",
+    "description": "Set type to taskUniversal in all JSON files"
+  },
+  "tool_use_id": "toolu_01Qe8eUYoFsuCNQs3MuutGvX"
+}
+2026-09-25 09:58:10 - Event type: PreToolUse
+2026-09-25 09:58:10 - Handling PreToolUse
+2026-09-25 09:58:10 - Hook completed successfully
+2026-09-25 09:58:11 - Hook script started
+2026-09-25 09:58:11 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PostToolUse","tool_name":"Bash","tool_input":{"command":"\\\nfor f in *.json; do\n  python3 -c \"\nimport json\nwith open('$f') as fh:\n    data = json.load(fh)\ndata['type'] = 'taskUniversal'\nwith open('$f', 'w') as fh:\n    json.dump(data, fh, indent=2)\nprint('Fixed: $f')\n\"\ndone","description":"Set type to taskUniversal in all JSON files"},"tool_response":{"stdout":"Fixed: Test_AwsObjectStorage_ListObjects_AfterUpload.json\nFixed: Test_AwsObjectStorage_ListObjects_AfterUpload_WithCap.json\nFixed: Test_AwsObjectStorage_ListObjects_Minimal.json\nFixed: Test_AwsObjectStorage_ListObjects_OutputCap.json\nFixed: Test_AwsObjectStorage_UploadFile_DeepNested.json\nFixed: Test_AwsObjectStorage_UploadFile_Minimal.json\nFixed: Test_AwsObjectStorage_UploadFile_NestedPath.json\nFixed: Test_AwsObjectStorage_UploadFile_Overwrite.json\nFixed: Test_AwsObjectStorage_UploadFile_RootKey.json\nFixed: Test_AwsObjectStorage_UploadFile_SubFolder.json","stderr":"","interrupted":false,"isImage":false,"noOutputExpected":false},"tool_use_id":"toolu_01Qe8eUYoFsuCNQs3MuutGvX","duration_ms":341}
+
+2026-09-25 09:58:11 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "\\\nfor f in *.json; do\n  python3 -c \"\nimport json\nwith open('$f') as fh:\n    data = json.load(fh)\ndata['type'] = 'taskUniversal'\nwith open('$f', 'w') as fh:\n    json.dump(data, fh, indent=2)\nprint('Fixed: $f')\n\"\ndone",
+    "description": "Set type to taskUniversal in all JSON files"
+  },
+  "tool_response": {
+    "stdout": "Fixed: Test_AwsObjectStorage_ListObjects_AfterUpload.json\nFixed: Test_AwsObjectStorage_ListObjects_AfterUpload_WithCap.json\nFixed: Test_AwsObjectStorage_ListObjects_Minimal.json\nFixed: Test_AwsObjectStorage_ListObjects_OutputCap.json\nFixed: Test_AwsObjectStorage_UploadFile_DeepNested.json\nFixed: Test_AwsObjectStorage_UploadFile_Minimal.json\nFixed: Test_AwsObjectStorage_UploadFile_NestedPath.json\nFixed: Test_AwsObjectStorage_UploadFile_Overwrite.json\nFixed: Test_AwsObjectStorage_UploadFile_RootKey.json\nFixed: Test_AwsObjectStorage_UploadFile_SubFolder.json",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+  },
+  "tool_use_id": "toolu_01Qe8eUYoFsuCNQs3MuutGvX",
+  "duration_ms": 341
+}
+2026-09-25 09:58:11 - Event type: PostToolUse
+2026-09-25 09:58:11 - Handling PostToolUse
+2026-09-25 09:58:11 - Hook completed successfully
+2026-09-25 09:58:14 - Hook script started
+2026-09-25 09:58:14 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PreToolUse","tool_name":"Bash","tool_input":{"command":"curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n  -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @/tmp/aws-object-storage-demo-testfeature/acceptance_testing/Test_AwsObjectStorage_ListObjects_Minimal.json 2>&1","description":"POST task with correct taskUniversal type"},"tool_use_id":"toolu_01FL8iGxM4y7f4LPhTsMQc33"}
+
+2026-09-25 09:58:14 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n  -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @/tmp/aws-object-storage-demo-testfeature/acceptance_testing/Test_AwsObjectStorage_ListObjects_Minimal.json 2>&1",
+    "description": "POST task with correct taskUniversal type"
+  },
+  "tool_use_id": "toolu_01FL8iGxM4y7f4LPhTsMQc33"
+}
+2026-09-25 09:58:14 - Event type: PreToolUse
+2026-09-25 09:58:14 - Handling PreToolUse
+2026-09-25 09:58:14 - Hook completed successfully
+2026-09-25 09:58:14 - Hook script started
+2026-09-25 09:58:14 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PostToolUse","tool_name":"Bash","tool_input":{"command":"curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n  -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @/tmp/aws-object-storage-demo-testfeature/acceptance_testing/Test_AwsObjectStorage_ListObjects_Minimal.json 2>&1","description":"POST task with correct taskUniversal type"},"tool_response":{"stdout":"Successfully created the Universal task with id 43dcad0ada4f45e08323f94ea8b73055.\nHTTP_STATUS:200","stderr":"","interrupted":false,"isImage":false,"noOutputExpected":false},"tool_use_id":"toolu_01FL8iGxM4y7f4LPhTsMQc33","duration_ms":143}
+
+2026-09-25 09:58:14 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n  -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @/tmp/aws-object-storage-demo-testfeature/acceptance_testing/Test_AwsObjectStorage_ListObjects_Minimal.json 2>&1",
+    "description": "POST task with correct taskUniversal type"
+  },
+  "tool_response": {
+    "stdout": "Successfully created the Universal task with id 43dcad0ada4f45e08323f94ea8b73055.\nHTTP_STATUS:200",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+  },
+  "tool_use_id": "toolu_01FL8iGxM4y7f4LPhTsMQc33",
+  "duration_ms": 143
+}
+2026-09-25 09:58:14 - Event type: PostToolUse
+2026-09-25 09:58:14 - Handling PostToolUse
+2026-09-25 09:58:14 - Hook completed successfully
+2026-09-25 09:58:23 - Hook script started
+2026-09-25 09:58:23 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PreToolUse","tool_name":"Bash","tool_input":{"command":"SKILL_DIR=/tmp/iss-ue-ca-plugin/claude/uac/ue-ca/skills/managing-universal-controller\nexport UIP_URL=https://ps1.stonebranchdev.cloud\nexport UIP_USERID=len\nexport UIP_PASSWORD=changeme\n\nTASKS=(\n  \"Test_AwsObjectStorage_ListObjects_AfterUpload\"\n  \"Test_AwsObjectStorage_ListObjects_AfterUpload_WithCap\"\n  \"Test_AwsObjectStorage_ListObjects_OutputCap\"\n  \"Test_AwsObjectStorage_UploadFile_DeepNested\"\n  \"Test_AwsObjectStorage_UploadFile_Minimal\"\n  \"Test_AwsObjectStorage_UploadFile_NestedPath\"\n  \"Test_AwsObjectStorage_UploadFile_Overwrite\"\n  \"Test_AwsObjectStorage_UploadFile_RootKey\"\n  \"Test_AwsObjectStorage_UploadFile_SubFolder\"\n)\n\nfor task in \"${TASKS[@]}\"; do\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  RESPONSE=$(curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n    -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @\"$JSON_FILE\" 2>&1)\n  STATUS=$(echo \"$RESPONSE\" | grep \"HTTP_STATUS\" | cut -d: -f2)\n  echo \"$task: HTTP $STATUS\"\ndone","description":"Create all remaining 9 test tasks on UAC"},"tool_use_id":"toolu_01AVbiLojfyS8GA8n2Bmr5ET"}
+
+2026-09-25 09:58:23 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "SKILL_DIR=/tmp/iss-ue-ca-plugin/claude/uac/ue-ca/skills/managing-universal-controller\nexport UIP_URL=https://ps1.stonebranchdev.cloud\nexport UIP_USERID=len\nexport UIP_PASSWORD=changeme\n\nTASKS=(\n  \"Test_AwsObjectStorage_ListObjects_AfterUpload\"\n  \"Test_AwsObjectStorage_ListObjects_AfterUpload_WithCap\"\n  \"Test_AwsObjectStorage_ListObjects_OutputCap\"\n  \"Test_AwsObjectStorage_UploadFile_DeepNested\"\n  \"Test_AwsObjectStorage_UploadFile_Minimal\"\n  \"Test_AwsObjectStorage_UploadFile_NestedPath\"\n  \"Test_AwsObjectStorage_UploadFile_Overwrite\"\n  \"Test_AwsObjectStorage_UploadFile_RootKey\"\n  \"Test_AwsObjectStorage_UploadFile_SubFolder\"\n)\n\nfor task in \"${TASKS[@]}\"; do\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  RESPONSE=$(curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n    -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @\"$JSON_FILE\" 2>&1)\n  STATUS=$(echo \"$RESPONSE\" | grep \"HTTP_STATUS\" | cut -d: -f2)\n  echo \"$task: HTTP $STATUS\"\ndone",
+    "description": "Create all remaining 9 test tasks on UAC"
+  },
+  "tool_use_id": "toolu_01AVbiLojfyS8GA8n2Bmr5ET"
+}
+2026-09-25 09:58:23 - Event type: PreToolUse
+2026-09-25 09:58:23 - Handling PreToolUse
+2026-09-25 09:58:23 - Hook completed successfully
+2026-09-25 09:58:24 - Hook script started
+2026-09-25 09:58:24 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PostToolUse","tool_name":"Bash","tool_input":{"command":"SKILL_DIR=/tmp/iss-ue-ca-plugin/claude/uac/ue-ca/skills/managing-universal-controller\nexport UIP_URL=https://ps1.stonebranchdev.cloud\nexport UIP_USERID=len\nexport UIP_PASSWORD=changeme\n\nTASKS=(\n  \"Test_AwsObjectStorage_ListObjects_AfterUpload\"\n  \"Test_AwsObjectStorage_ListObjects_AfterUpload_WithCap\"\n  \"Test_AwsObjectStorage_ListObjects_OutputCap\"\n  \"Test_AwsObjectStorage_UploadFile_DeepNested\"\n  \"Test_AwsObjectStorage_UploadFile_Minimal\"\n  \"Test_AwsObjectStorage_UploadFile_NestedPath\"\n  \"Test_AwsObjectStorage_UploadFile_Overwrite\"\n  \"Test_AwsObjectStorage_UploadFile_RootKey\"\n  \"Test_AwsObjectStorage_UploadFile_SubFolder\"\n)\n\nfor task in \"${TASKS[@]}\"; do\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  RESPONSE=$(curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n    -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @\"$JSON_FILE\" 2>&1)\n  STATUS=$(echo \"$RESPONSE\" | grep \"HTTP_STATUS\" | cut -d: -f2)\n  echo \"$task: HTTP $STATUS\"\ndone","description":"Create all remaining 9 test tasks on UAC"},"tool_response":{"stdout":"Test_AwsObjectStorage_ListObjects_AfterUpload: HTTP 400\nTest_AwsObjectStorage_ListObjects_AfterUpload_WithCap: HTTP 200\nTest_AwsObjectStorage_ListObjects_OutputCap: HTTP 400\nTest_AwsObjectStorage_UploadFile_DeepNested: HTTP 200\nTest_AwsObjectStorage_UploadFile_Minimal: HTTP 400\nTest_AwsObjectStorage_UploadFile_NestedPath: HTTP 200\nTest_AwsObjectStorage_UploadFile_Overwrite: HTTP 400\nTest_AwsObjectStorage_UploadFile_RootKey: HTTP 400\nTest_AwsObjectStorage_UploadFile_SubFolder: HTTP 200","stderr":"","interrupted":false,"isImage":false,"noOutputExpected":false},"tool_use_id":"toolu_01AVbiLojfyS8GA8n2Bmr5ET","duration_ms":1435}
+
+2026-09-25 09:58:24 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "SKILL_DIR=/tmp/iss-ue-ca-plugin/claude/uac/ue-ca/skills/managing-universal-controller\nexport UIP_URL=https://ps1.stonebranchdev.cloud\nexport UIP_USERID=len\nexport UIP_PASSWORD=changeme\n\nTASKS=(\n  \"Test_AwsObjectStorage_ListObjects_AfterUpload\"\n  \"Test_AwsObjectStorage_ListObjects_AfterUpload_WithCap\"\n  \"Test_AwsObjectStorage_ListObjects_OutputCap\"\n  \"Test_AwsObjectStorage_UploadFile_DeepNested\"\n  \"Test_AwsObjectStorage_UploadFile_Minimal\"\n  \"Test_AwsObjectStorage_UploadFile_NestedPath\"\n  \"Test_AwsObjectStorage_UploadFile_Overwrite\"\n  \"Test_AwsObjectStorage_UploadFile_RootKey\"\n  \"Test_AwsObjectStorage_UploadFile_SubFolder\"\n)\n\nfor task in \"${TASKS[@]}\"; do\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  RESPONSE=$(curl -s -w \"\\nHTTP_STATUS:%{http_code}\" -u len:changeme \\\n    -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @\"$JSON_FILE\" 2>&1)\n  STATUS=$(echo \"$RESPONSE\" | grep \"HTTP_STATUS\" | cut -d: -f2)\n  echo \"$task: HTTP $STATUS\"\ndone",
+    "description": "Create all remaining 9 test tasks on UAC"
+  },
+  "tool_response": {
+    "stdout": "Test_AwsObjectStorage_ListObjects_AfterUpload: HTTP 400\nTest_AwsObjectStorage_ListObjects_AfterUpload_WithCap: HTTP 200\nTest_AwsObjectStorage_ListObjects_OutputCap: HTTP 400\nTest_AwsObjectStorage_UploadFile_DeepNested: HTTP 200\nTest_AwsObjectStorage_UploadFile_Minimal: HTTP 400\nTest_AwsObjectStorage_UploadFile_NestedPath: HTTP 200\nTest_AwsObjectStorage_UploadFile_Overwrite: HTTP 400\nTest_AwsObjectStorage_UploadFile_RootKey: HTTP 400\nTest_AwsObjectStorage_UploadFile_SubFolder: HTTP 200",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+  },
+  "tool_use_id": "toolu_01AVbiLojfyS8GA8n2Bmr5ET",
+  "duration_ms": 1435
+}
+2026-09-25 09:58:24 - Event type: PostToolUse
+2026-09-25 09:58:24 - Handling PostToolUse
+2026-09-25 09:58:24 - Hook completed successfully
+2026-09-25 09:58:29 - Hook script started
+2026-09-25 09:58:29 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PreToolUse","tool_name":"Bash","tool_input":{"command":"for task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  RESPONSE=$(curl -s -u len:changeme \\\n    -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\" 2>&1)\n  echo \"${task}: ${RESPONSE}\"\ndone","description":"Check 400 errors for failed task creations"},"tool_use_id":"toolu_01TtW7VXDtizj4PYHxHXvEtP"}
+
+2026-09-25 09:58:29 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "for task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  RESPONSE=$(curl -s -u len:changeme \\\n    -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\" 2>&1)\n  echo \"${task}: ${RESPONSE}\"\ndone",
+    "description": "Check 400 errors for failed task creations"
+  },
+  "tool_use_id": "toolu_01TtW7VXDtizj4PYHxHXvEtP"
+}
+2026-09-25 09:58:29 - Event type: PreToolUse
+2026-09-25 09:58:29 - Handling PreToolUse
+2026-09-25 09:58:29 - Hook completed successfully
+2026-09-25 09:58:30 - Hook script started
+2026-09-25 09:58:30 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PostToolUse","tool_name":"Bash","tool_input":{"command":"for task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  RESPONSE=$(curl -s -u len:changeme \\\n    -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\" 2>&1)\n  echo \"${task}: ${RESPONSE}\"\ndone","description":"Check 400 errors for failed task creations"},"tool_response":{"stdout":"Test_AwsObjectStorage_ListObjects_AfterUpload: Create task failed. A duplicate value has been detected. Name must be unique.\nTest_AwsObjectStorage_ListObjects_OutputCap: Create task failed. A duplicate value has been detected. Name must be unique.\nTest_AwsObjectStorage_UploadFile_Minimal: Create task failed. A duplicate value has been detected. Name must be unique.\nTest_AwsObjectStorage_UploadFile_Overwrite: Create task failed. A duplicate value has been detected. Name must be unique.\nTest_AwsObjectStorage_UploadFile_RootKey: Create task failed. A duplicate value has been detected. Name must be unique.","stderr":"","interrupted":false,"isImage":false,"noOutputExpected":false},"tool_use_id":"toolu_01TtW7VXDtizj4PYHxHXvEtP","duration_ms":686}
+
+2026-09-25 09:58:30 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "for task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  RESPONSE=$(curl -s -u len:changeme \\\n    -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\" 2>&1)\n  echo \"${task}: ${RESPONSE}\"\ndone",
+    "description": "Check 400 errors for failed task creations"
+  },
+  "tool_response": {
+    "stdout": "Test_AwsObjectStorage_ListObjects_AfterUpload: Create task failed. A duplicate value has been detected. Name must be unique.\nTest_AwsObjectStorage_ListObjects_OutputCap: Create task failed. A duplicate value has been detected. Name must be unique.\nTest_AwsObjectStorage_UploadFile_Minimal: Create task failed. A duplicate value has been detected. Name must be unique.\nTest_AwsObjectStorage_UploadFile_Overwrite: Create task failed. A duplicate value has been detected. Name must be unique.\nTest_AwsObjectStorage_UploadFile_RootKey: Create task failed. A duplicate value has been detected. Name must be unique.",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+  },
+  "tool_use_id": "toolu_01TtW7VXDtizj4PYHxHXvEtP",
+  "duration_ms": 686
+}
+2026-09-25 09:58:30 - Event type: PostToolUse
+2026-09-25 09:58:30 - Handling PostToolUse
+2026-09-25 09:58:30 - Hook completed successfully
+2026-09-25 09:58:37 - Hook script started
+2026-09-25 09:58:37 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PreToolUse","tool_name":"Bash","tool_input":{"command":"for task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  SYSID=$(curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=${task}\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print(data.get('sysId',''))\" 2>/dev/null)\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  RESPONSE=$(python3 -c \"\nimport json\nwith open('$JSON_FILE') as f:\n    data = json.load(f)\ndata['sysId'] = '$SYSID'\nprint(json.dumps(data))\n\" | curl -s -u len:changeme \\\n    -X PUT \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @- 2>&1)\n  echo \"${task} (sysId=${SYSID}): ${RESPONSE}\"\ndone","description":"Update existing tasks via PUT with their sysIds"},"tool_use_id":"toolu_01TXYyFwohM1pqJLpNaZ7kUe"}
+
+2026-09-25 09:58:37 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "for task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  SYSID=$(curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=${task}\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print(data.get('sysId',''))\" 2>/dev/null)\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  RESPONSE=$(python3 -c \"\nimport json\nwith open('$JSON_FILE') as f:\n    data = json.load(f)\ndata['sysId'] = '$SYSID'\nprint(json.dumps(data))\n\" | curl -s -u len:changeme \\\n    -X PUT \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @- 2>&1)\n  echo \"${task} (sysId=${SYSID}): ${RESPONSE}\"\ndone",
+    "description": "Update existing tasks via PUT with their sysIds"
+  },
+  "tool_use_id": "toolu_01TXYyFwohM1pqJLpNaZ7kUe"
+}
+2026-09-25 09:58:37 - Event type: PreToolUse
+2026-09-25 09:58:37 - Handling PreToolUse
+2026-09-25 09:58:37 - Hook completed successfully
+2026-09-25 09:58:39 - Hook script started
+2026-09-25 09:58:39 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PostToolUse","tool_name":"Bash","tool_input":{"command":"for task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  SYSID=$(curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=${task}\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print(data.get('sysId',''))\" 2>/dev/null)\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  RESPONSE=$(python3 -c \"\nimport json\nwith open('$JSON_FILE') as f:\n    data = json.load(f)\ndata['sysId'] = '$SYSID'\nprint(json.dumps(data))\n\" | curl -s -u len:changeme \\\n    -X PUT \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @- 2>&1)\n  echo \"${task} (sysId=${SYSID}): ${RESPONSE}\"\ndone","description":"Update existing tasks via PUT with their sysIds"},"tool_response":{"stdout":"Test_AwsObjectStorage_ListObjects_AfterUpload (sysId=6ae41d89ec9d46a9b665db306613025c): Update task failed. Can't update universal template id.\nTest_AwsObjectStorage_ListObjects_OutputCap (sysId=e15f9361ee984ad4a7a4f7a49b3e83fa): Update task failed. Can't update universal template id.\nTest_AwsObjectStorage_UploadFile_Minimal (sysId=d6c318e932ad43afb069e18571ac0d1b): Update task failed. Can't update universal template id.\nTest_AwsObjectStorage_UploadFile_Overwrite (sysId=ada043ce60a54b1e9e989b6ccab97831): Update task failed. Can't update universal template id.\nTest_AwsObjectStorage_UploadFile_RootKey (sysId=a57fe598b00d4ec8beefd36fc0da2598): Update task failed. Can't update universal template id.","stderr":"","interrupted":false,"isImage":false,"noOutputExpected":false},"tool_use_id":"toolu_01TXYyFwohM1pqJLpNaZ7kUe","duration_ms":1771}
+
+2026-09-25 09:58:39 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "for task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  SYSID=$(curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=${task}\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print(data.get('sysId',''))\" 2>/dev/null)\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  RESPONSE=$(python3 -c \"\nimport json\nwith open('$JSON_FILE') as f:\n    data = json.load(f)\ndata['sysId'] = '$SYSID'\nprint(json.dumps(data))\n\" | curl -s -u len:changeme \\\n    -X PUT \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" \\\n    -d @- 2>&1)\n  echo \"${task} (sysId=${SYSID}): ${RESPONSE}\"\ndone",
+    "description": "Update existing tasks via PUT with their sysIds"
+  },
+  "tool_response": {
+    "stdout": "Test_AwsObjectStorage_ListObjects_AfterUpload (sysId=6ae41d89ec9d46a9b665db306613025c): Update task failed. Can't update universal template id.\nTest_AwsObjectStorage_ListObjects_OutputCap (sysId=e15f9361ee984ad4a7a4f7a49b3e83fa): Update task failed. Can't update universal template id.\nTest_AwsObjectStorage_UploadFile_Minimal (sysId=d6c318e932ad43afb069e18571ac0d1b): Update task failed. Can't update universal template id.\nTest_AwsObjectStorage_UploadFile_Overwrite (sysId=ada043ce60a54b1e9e989b6ccab97831): Update task failed. Can't update universal template id.\nTest_AwsObjectStorage_UploadFile_RootKey (sysId=a57fe598b00d4ec8beefd36fc0da2598): Update task failed. Can't update universal template id.",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+  },
+  "tool_use_id": "toolu_01TXYyFwohM1pqJLpNaZ7kUe",
+  "duration_ms": 1771
+}
+2026-09-25 09:58:39 - Event type: PostToolUse
+2026-09-25 09:58:39 - Handling PostToolUse
+2026-09-25 09:58:39 - Hook completed successfully
+2026-09-25 09:58:47 - Hook script started
+2026-09-25 09:58:47 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PreToolUse","tool_name":"Bash","tool_input":{"command":"curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=Test_AwsObjectStorage_UploadFile_Minimal\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print('template:', data.get('universalTemplate',{}).get('name') if isinstance(data.get('universalTemplate'),dict) else data.get('universalTemplate')); print('sysId:', data.get('sysId'))\" 2>&1","description":"Check existing task template linkage"},"tool_use_id":"toolu_01LntTsUuXfbUQCmZDMKvFSY"}
+
+2026-09-25 09:58:47 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=Test_AwsObjectStorage_UploadFile_Minimal\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print('template:', data.get('universalTemplate',{}).get('name') if isinstance(data.get('universalTemplate'),dict) else data.get('universalTemplate')); print('sysId:', data.get('sysId'))\" 2>&1",
+    "description": "Check existing task template linkage"
+  },
+  "tool_use_id": "toolu_01LntTsUuXfbUQCmZDMKvFSY"
+}
+2026-09-25 09:58:47 - Event type: PreToolUse
+2026-09-25 09:58:47 - Handling PreToolUse
+2026-09-25 09:58:47 - Hook completed successfully
+2026-09-25 09:58:47 - Hook script started
+2026-09-25 09:58:47 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PostToolUse","tool_name":"Bash","tool_input":{"command":"curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=Test_AwsObjectStorage_UploadFile_Minimal\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print('template:', data.get('universalTemplate',{}).get('name') if isinstance(data.get('universalTemplate'),dict) else data.get('universalTemplate')); print('sysId:', data.get('sysId'))\" 2>&1","description":"Check existing task template linkage"},"tool_response":{"stdout":"template: None\nsysId: d6c318e932ad43afb069e18571ac0d1b","stderr":"","interrupted":false,"isImage":false,"noOutputExpected":false},"tool_use_id":"toolu_01LntTsUuXfbUQCmZDMKvFSY","duration_ms":152}
+
+2026-09-25 09:58:47 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=Test_AwsObjectStorage_UploadFile_Minimal\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print('template:', data.get('universalTemplate',{}).get('name') if isinstance(data.get('universalTemplate'),dict) else data.get('universalTemplate')); print('sysId:', data.get('sysId'))\" 2>&1",
+    "description": "Check existing task template linkage"
+  },
+  "tool_response": {
+    "stdout": "template: None\nsysId: d6c318e932ad43afb069e18571ac0d1b",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+  },
+  "tool_use_id": "toolu_01LntTsUuXfbUQCmZDMKvFSY",
+  "duration_ms": 152
+}
+2026-09-25 09:58:47 - Event type: PostToolUse
+2026-09-25 09:58:47 - Handling PostToolUse
+2026-09-25 09:58:47 - Hook completed successfully
+2026-09-25 09:58:51 - Hook script started
+2026-09-25 09:58:51 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PreToolUse","tool_name":"Bash","tool_input":{"command":"curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=Test_AwsObjectStorage_UploadFile_Minimal\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print(json.dumps({k:v for k,v in data.items() if 'template' in k.lower() or 'universal' in k.lower()}, indent=2))\" 2>&1","description":"Check template-related fields in existing task"},"tool_use_id":"toolu_0112FQ25vfZc2KJGYe6TWaKS"}
+
+2026-09-25 09:58:51 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=Test_AwsObjectStorage_UploadFile_Minimal\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print(json.dumps({k:v for k,v in data.items() if 'template' in k.lower() or 'universal' in k.lower()}, indent=2))\" 2>&1",
+    "description": "Check template-related fields in existing task"
+  },
+  "tool_use_id": "toolu_0112FQ25vfZc2KJGYe6TWaKS"
+}
+2026-09-25 09:58:51 - Event type: PreToolUse
+2026-09-25 09:58:51 - Handling PreToolUse
+2026-09-25 09:58:51 - Hook completed successfully
+2026-09-25 09:58:51 - Hook script started
+2026-09-25 09:58:51 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PostToolUse","tool_name":"Bash","tool_input":{"command":"curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=Test_AwsObjectStorage_UploadFile_Minimal\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print(json.dumps({k:v for k,v in data.items() if 'template' in k.lower() or 'universal' in k.lower()}, indent=2))\" 2>&1","description":"Check template-related fields in existing task"},"tool_response":{"stdout":"{\n  \"template\": \"Ue 3 Aws Object Storage\"\n}","stderr":"","interrupted":false,"isImage":false,"noOutputExpected":false},"tool_use_id":"toolu_0112FQ25vfZc2KJGYe6TWaKS","duration_ms":149}
+
+2026-09-25 09:58:51 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "curl -s -u len:changeme \"https://ps1.stonebranchdev.cloud/resources/task?taskname=Test_AwsObjectStorage_UploadFile_Minimal\" 2>&1 | python3 -c \"import json,sys; data=json.load(sys.stdin); print(json.dumps({k:v for k,v in data.items() if 'template' in k.lower() or 'universal' in k.lower()}, indent=2))\" 2>&1",
+    "description": "Check template-related fields in existing task"
+  },
+  "tool_response": {
+    "stdout": "{\n  \"template\": \"Ue 3 Aws Object Storage\"\n}",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+  },
+  "tool_use_id": "toolu_0112FQ25vfZc2KJGYe6TWaKS",
+  "duration_ms": 149
+}
+2026-09-25 09:58:51 - Event type: PostToolUse
+2026-09-25 09:58:51 - Handling PostToolUse
+2026-09-25 09:58:51 - Hook completed successfully
+2026-09-25 09:59:03 - Hook script started
+2026-09-25 09:59:03 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PreToolUse","tool_name":"Bash","tool_input":{"command":"export UIP_URL=https://ps1.stonebranchdev.cloud\nexport UIP_USERID=len\nexport UIP_PASSWORD=changeme\n\nfor task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  # Delete existing task instances first\n  curl -s -u len:changeme -X POST \\\n    \"https://ps1.stonebranchdev.cloud/resources/taskinstance/list\" \\\n    -H \"Content-Type: application/json\" \\\n    -d \"{\\\"name\\\":\\\"${task}\\\"}\" | python3 -c \"\nimport json,sys\ndata = json.load(sys.stdin)\ninstances = data if isinstance(data, list) else [data]\nfor inst in instances:\n    sid = inst.get('sysId') or inst.get('id','')\n    if sid:\n        print(sid)\n\" 2>/dev/null | while read sid; do\n    curl -s -u len:changeme -X DELETE \"https://ps1.stonebranchdev.cloud/resources/taskinstance\" \\\n      -H \"Content-Type: application/json\" -d \"{\\\"id\\\":\\\"$sid\\\",\\\"recursive\\\":true}\" > /dev/null\n  done\n\n  # Delete the task\n  DEL=$(curl -s -u len:changeme -X DELETE \"https://ps1.stonebranchdev.cloud/resources/task?taskname=${task}\" 2>&1)\n  echo \"Deleted $task: $DEL\"\n\n  # Recreate with correct template\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  CREATE=$(curl -s -u len:changeme -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" -d @\"$JSON_FILE\" 2>&1)\n  echo \"Created $task: $CREATE\"\ndone","description":"Delete old tasks and recreate with correct template"},"tool_use_id":"toolu_01EuzgDzChZeCaAam5oMUjNa"}
+
+2026-09-25 09:59:03 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "export UIP_URL=https://ps1.stonebranchdev.cloud\nexport UIP_USERID=len\nexport UIP_PASSWORD=changeme\n\nfor task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  # Delete existing task instances first\n  curl -s -u len:changeme -X POST \\\n    \"https://ps1.stonebranchdev.cloud/resources/taskinstance/list\" \\\n    -H \"Content-Type: application/json\" \\\n    -d \"{\\\"name\\\":\\\"${task}\\\"}\" | python3 -c \"\nimport json,sys\ndata = json.load(sys.stdin)\ninstances = data if isinstance(data, list) else [data]\nfor inst in instances:\n    sid = inst.get('sysId') or inst.get('id','')\n    if sid:\n        print(sid)\n\" 2>/dev/null | while read sid; do\n    curl -s -u len:changeme -X DELETE \"https://ps1.stonebranchdev.cloud/resources/taskinstance\" \\\n      -H \"Content-Type: application/json\" -d \"{\\\"id\\\":\\\"$sid\\\",\\\"recursive\\\":true}\" > /dev/null\n  done\n\n  # Delete the task\n  DEL=$(curl -s -u len:changeme -X DELETE \"https://ps1.stonebranchdev.cloud/resources/task?taskname=${task}\" 2>&1)\n  echo \"Deleted $task: $DEL\"\n\n  # Recreate with correct template\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  CREATE=$(curl -s -u len:changeme -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" -d @\"$JSON_FILE\" 2>&1)\n  echo \"Created $task: $CREATE\"\ndone",
+    "description": "Delete old tasks and recreate with correct template"
+  },
+  "tool_use_id": "toolu_01EuzgDzChZeCaAam5oMUjNa"
+}
+2026-09-25 09:59:03 - Event type: PreToolUse
+2026-09-25 09:59:03 - Handling PreToolUse
+2026-09-25 09:59:03 - Hook completed successfully
+2026-09-25 09:59:07 - Hook script started
+2026-09-25 09:59:07 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PostToolUse","tool_name":"Bash","tool_input":{"command":"export UIP_URL=https://ps1.stonebranchdev.cloud\nexport UIP_USERID=len\nexport UIP_PASSWORD=changeme\n\nfor task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  # Delete existing task instances first\n  curl -s -u len:changeme -X POST \\\n    \"https://ps1.stonebranchdev.cloud/resources/taskinstance/list\" \\\n    -H \"Content-Type: application/json\" \\\n    -d \"{\\\"name\\\":\\\"${task}\\\"}\" | python3 -c \"\nimport json,sys\ndata = json.load(sys.stdin)\ninstances = data if isinstance(data, list) else [data]\nfor inst in instances:\n    sid = inst.get('sysId') or inst.get('id','')\n    if sid:\n        print(sid)\n\" 2>/dev/null | while read sid; do\n    curl -s -u len:changeme -X DELETE \"https://ps1.stonebranchdev.cloud/resources/taskinstance\" \\\n      -H \"Content-Type: application/json\" -d \"{\\\"id\\\":\\\"$sid\\\",\\\"recursive\\\":true}\" > /dev/null\n  done\n\n  # Delete the task\n  DEL=$(curl -s -u len:changeme -X DELETE \"https://ps1.stonebranchdev.cloud/resources/task?taskname=${task}\" 2>&1)\n  echo \"Deleted $task: $DEL\"\n\n  # Recreate with correct template\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  CREATE=$(curl -s -u len:changeme -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" -d @\"$JSON_FILE\" 2>&1)\n  echo \"Created $task: $CREATE\"\ndone","description":"Delete old tasks and recreate with correct template"},"tool_response":{"stdout":"Deleted Test_AwsObjectStorage_ListObjects_AfterUpload: Task deleted successfully.\nCreated Test_AwsObjectStorage_ListObjects_AfterUpload: Successfully created the Universal task with id a137967a157641b88ca49a78dacb0ccd.\nDeleted Test_AwsObjectStorage_ListObjects_OutputCap: Task deleted successfully.\nCreated Test_AwsObjectStorage_ListObjects_OutputCap: Successfully created the Universal task with id 86cda2b7f1c9490288dff93df3e76f6f.\nDeleted Test_AwsObjectStorage_UploadFile_Minimal: Task deleted successfully.\nCreated Test_AwsObjectStorage_UploadFile_Minimal: Successfully created the Universal task with id acdcd6c0d536452b9479c7038f59d0f6.\nDeleted Test_AwsObjectStorage_UploadFile_Overwrite: Task deleted successfully.\nCreated Test_AwsObjectStorage_UploadFile_Overwrite: Successfully created the Universal task with id b9bc2034df3344c583162536bdd4e131.\nDeleted Test_AwsObjectStorage_UploadFile_RootKey: Task deleted successfully.\nCreated Test_AwsObjectStorage_UploadFile_RootKey: Successfully created the Universal task with id 9d403315fad34854816d86961cc3b2c5.","stderr":"","interrupted":false,"isImage":false,"noOutputExpected":false},"tool_use_id":"toolu_01EuzgDzChZeCaAam5oMUjNa","duration_ms":4046}
+
+2026-09-25 09:59:07 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "export UIP_URL=https://ps1.stonebranchdev.cloud\nexport UIP_USERID=len\nexport UIP_PASSWORD=changeme\n\nfor task in \"Test_AwsObjectStorage_ListObjects_AfterUpload\" \"Test_AwsObjectStorage_ListObjects_OutputCap\" \"Test_AwsObjectStorage_UploadFile_Minimal\" \"Test_AwsObjectStorage_UploadFile_Overwrite\" \"Test_AwsObjectStorage_UploadFile_RootKey\"; do\n  # Delete existing task instances first\n  curl -s -u len:changeme -X POST \\\n    \"https://ps1.stonebranchdev.cloud/resources/taskinstance/list\" \\\n    -H \"Content-Type: application/json\" \\\n    -d \"{\\\"name\\\":\\\"${task}\\\"}\" | python3 -c \"\nimport json,sys\ndata = json.load(sys.stdin)\ninstances = data if isinstance(data, list) else [data]\nfor inst in instances:\n    sid = inst.get('sysId') or inst.get('id','')\n    if sid:\n        print(sid)\n\" 2>/dev/null | while read sid; do\n    curl -s -u len:changeme -X DELETE \"https://ps1.stonebranchdev.cloud/resources/taskinstance\" \\\n      -H \"Content-Type: application/json\" -d \"{\\\"id\\\":\\\"$sid\\\",\\\"recursive\\\":true}\" > /dev/null\n  done\n\n  # Delete the task\n  DEL=$(curl -s -u len:changeme -X DELETE \"https://ps1.stonebranchdev.cloud/resources/task?taskname=${task}\" 2>&1)\n  echo \"Deleted $task: $DEL\"\n\n  # Recreate with correct template\n  JSON_FILE=\"/tmp/aws-object-storage-demo-testfeature/acceptance_testing/${task}.json\"\n  CREATE=$(curl -s -u len:changeme -X POST \"https://ps1.stonebranchdev.cloud/resources/task\" \\\n    -H \"Content-Type: application/json\" -d @\"$JSON_FILE\" 2>&1)\n  echo \"Created $task: $CREATE\"\ndone",
+    "description": "Delete old tasks and recreate with correct template"
+  },
+  "tool_response": {
+    "stdout": "Deleted Test_AwsObjectStorage_ListObjects_AfterUpload: Task deleted successfully.\nCreated Test_AwsObjectStorage_ListObjects_AfterUpload: Successfully created the Universal task with id a137967a157641b88ca49a78dacb0ccd.\nDeleted Test_AwsObjectStorage_ListObjects_OutputCap: Task deleted successfully.\nCreated Test_AwsObjectStorage_ListObjects_OutputCap: Successfully created the Universal task with id 86cda2b7f1c9490288dff93df3e76f6f.\nDeleted Test_AwsObjectStorage_UploadFile_Minimal: Task deleted successfully.\nCreated Test_AwsObjectStorage_UploadFile_Minimal: Successfully created the Universal task with id acdcd6c0d536452b9479c7038f59d0f6.\nDeleted Test_AwsObjectStorage_UploadFile_Overwrite: Task deleted successfully.\nCreated Test_AwsObjectStorage_UploadFile_Overwrite: Successfully created the Universal task with id b9bc2034df3344c583162536bdd4e131.\nDeleted Test_AwsObjectStorage_UploadFile_RootKey: Task deleted successfully.\nCreated Test_AwsObjectStorage_UploadFile_RootKey: Successfully created the Universal task with id 9d403315fad34854816d86961cc3b2c5.",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+  },
+  "tool_use_id": "toolu_01EuzgDzChZeCaAam5oMUjNa",
+  "duration_ms": 4046
+}
+2026-09-25 09:59:07 - Event type: PostToolUse
+2026-09-25 09:59:07 - Handling PostToolUse
+2026-09-25 09:59:07 - Hook completed successfully
+2026-09-25 09:59:12 - Hook script started
+2026-09-25 09:59:12 - Received stdin data: {"session_id":"57c428a1-321f-40c7-a9e2-56a472b36b34","transcript_path":"/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl","cwd":"/tmp/aws-object-storage-demo-testfeature/acceptance_testing","permission_mode":"bypassPermissions","effort":{"level":"high"},"hook_event_name":"PreToolUse","tool_name":"Bash","tool_input":{"command":"cd /tmp/iss-ue-ca-plugin/claude/uac/ue-ca/skills/managing-universal-controller && \\\nexport UIP_URL=https://ps1.stonebranchdev.cloud && \\\nexport UIP_USERID=len && \\\nexport UIP_PASSWORD=changeme && \\\npython3 task.py launch Test_AwsObjectStorage_ListObjects_Minimal 2>&1","timeout":300000,"description":"Launch and wait for Test_AwsObjectStorage_ListObjects_Minimal"},"tool_use_id":"toolu_017bHR8vZXqaBJmDZHoYsqA8"}
+
+2026-09-25 09:59:12 - Parsed event data: {
+  "session_id": "57c428a1-321f-40c7-a9e2-56a472b36b34",
+  "transcript_path": "/tmp/.claude/projects/-tmp-aws-object-storage-demo-testfeature/57c428a1-321f-40c7-a9e2-56a472b36b34.jsonl",
+  "cwd": "/tmp/aws-object-storage-demo-testfeature/acceptance_testing",
+  "permission_mode": "bypassPermissions",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "cd /tmp/iss-ue-ca-plugin/claude/uac/ue-ca/skills/managing-universal-controller && \\\nexport UIP_URL=https://ps1.stonebranchdev.cloud && \\\nexport UIP_USERID=len && \\\nexport UIP_PASSWORD=changeme && \\\npython3 task.py launch Test_AwsObjectStorage_ListObjects_Minimal 2>&1",
+    "timeout": 300000,
+    "description": "Launch and wait for Test_AwsObjectStorage_ListObjects_Minimal"
+  },
+  "tool_use_id": "toolu_017bHR8vZXqaBJmDZHoYsqA8"
+}
+2026-09-25 09:59:12 - Event type: PreToolUse
+2026-09-25 09:59:12 - Handling PreToolUse
+2026-09-25 09:59:12 - Hook completed successfully
